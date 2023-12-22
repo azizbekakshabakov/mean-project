@@ -19,6 +19,9 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 
 import Home from "./page/Home";
+import Register from "./page/Register";
+import Login from "./page/Login";
+import Add from "./page/Add";
 
 function App() {
   const [update, setUpdate] = React.useState("");
@@ -231,6 +234,9 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/add" element={<Add />} />
           {/* <Route path="/students/:id" element={<Student />} />
         <Route path="/contact" component={Contact} /> */}
         </Routes>
