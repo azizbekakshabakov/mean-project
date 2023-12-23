@@ -25,8 +25,8 @@ const VisuallyHiddenInput = styled("input")({
 });
 
 const Add = () => {
-  const [name, setName] = useState();
-  const [artist, setArtist] = useState();
+  const [name, setName] = useState("");
+  const [artist, setArtist] = useState("");
   const [file, setFile] = useState();
 
   const [nameErr, setNameErr] = useState("");
@@ -71,7 +71,9 @@ const Add = () => {
       isErrored = true;
     } else setArtistErr("");
 
-    if (!isAudioFileByExtension(file["name"])) {
+    if (!file) {
+      isErrored = true;
+    } else if (!isAudioFileByExtension(file["name"])) {
       setFileErr("Выбранный файл не аудио-файл");
       isErrored = true;
     } else setFileErr("");
